@@ -16,8 +16,7 @@
 
         <h1>🌦 Weather App</h1>
 
-        <form method="POST">
-
+        <form method="POST" action="/">
             <input type="text" name="city" placeholder="Enter city name" required>
 
             <button type="submit">
@@ -36,7 +35,7 @@
 
             <div class="weather-left">
 
-                <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+                <img src="{{ weather.city_image }}" alt="City Image">
 
             </div>
 

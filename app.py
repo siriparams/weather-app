@@ -4,6 +4,7 @@ import requests
 app = Flask(__name__)
 
 API_KEY = "7c619b7010adfd8b3bc73a37d5541ad3"
+UNSPLASH_KEY = "hcro3sjEy0ucL9ULlHRE36xi4h8mqxkeXnhvzv2_s_I"
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -33,13 +34,26 @@ def weather(city):
     data = response.json()
 
     if data["cod"] == 200:
+        image_url = f"https://api.unsplash.com/search/photos?page=1&query={city}&client_id={UNSPLASH_KEY}"
 
+        image_response = requests.get(image_url)
+
+        image_data = image_response.json()
+
+        if image_data["results"]:
+
+            city_image = image_data["results"][0]["urls"]["regular"]
+
+        else:
+
+            city_image = "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
         weather_data = {
             "city": data["name"],
             "temperature": data["main"]["temp"],
             "description": data["weather"][0]["description"],
             "humidity": data["main"]["humidity"],
             "wind": data["wind"]["speed"],
+            "city_image": city_image,
             "icon": data["weather"][0]["icon"]
         }
 
