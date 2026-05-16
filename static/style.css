@@ -9,7 +9,7 @@
 
 body {
 
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@ body {
             #203a43,
             #2c5364);
 
-    overflow: hidden;
+
 }
 
 .container {
@@ -118,9 +118,61 @@ button:hover {
     background: #0072ff;
 }
 
-.weather-box {
+.weather-box{
 
-    animation: slideUp 0.8s ease;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    margin-top:30px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.08);
+
+    animation:slideUp 0.8s ease;
+}
+
+.weather-left img{
+
+    width:130px;
+}
+
+.weather-right{
+
+    text-align:left;
+
+    flex:1;
+}
+
+.weather-right h2{
+
+    font-size:32px;
+
+    margin-bottom:10px;
+}
+
+.weather-right h1{
+
+    font-size:52px;
+
+    margin:10px 0;
+}
+
+.weather-right p{
+
+    margin:8px 0;
+
+    font-size:18px;
+
+    color:#f1f1f1;
+}
 }
 
 .weather-box img {
