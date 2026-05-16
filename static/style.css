@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -9,7 +9,7 @@
 
 body {
 
-    min-height: 100vh;
+    min-height: 50vh;
 
     display: flex;
     justify-content: center;
@@ -20,27 +20,25 @@ body {
             #203a43,
             #2c5364);
 
-
+    padding: 20px;
 }
 
 .container {
 
-    width: 380px;
+    width: 650px;
 
-    padding: 35px;
+    padding: 40px;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
     background: rgba(255, 255, 255, 0.1);
 
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(18px);
 
     border: 1px solid rgba(255, 255, 255, 0.2);
 
     box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.3);
-
-    text-align: center;
 
     color: white;
 
@@ -49,11 +47,13 @@ body {
 
 h1 {
 
-    margin-bottom: 25px;
+    text-align: center;
 
-    font-size: 38px;
+    margin-bottom: 30px;
 
-    font-weight: 600;
+    font-size: 42px;
+
+    font-weight: 700;
 
     letter-spacing: 1px;
 }
@@ -64,7 +64,7 @@ form {
 
     justify-content: center;
 
-    gap: 10px;
+    gap: 15px;
 
     margin-bottom: 30px;
 }
@@ -73,19 +73,19 @@ input {
 
     flex: 1;
 
-    padding: 12px;
+    padding: 14px;
 
     border: none;
 
     outline: none;
 
-    border-radius: 12px;
+    border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
 
     color: white;
 
-    font-size: 15px;
+    font-size: 16px;
 }
 
 input::placeholder {
@@ -94,17 +94,19 @@ input::placeholder {
 
 button {
 
-    padding: 12px 18px;
+    padding: 14px 22px;
 
     border: none;
 
-    border-radius: 12px;
+    border-radius: 15px;
 
     background: #00c6ff;
 
     color: white;
 
-    font-weight: 600;
+    font-size: 16px;
+
+    font-weight: 500;
 
     cursor: pointer;
 
@@ -118,89 +120,67 @@ button:hover {
     background: #0072ff;
 }
 
-.weather-box{
+.weather-box {
 
-    display:flex;
+    margin-top: 25px;
 
-    align-items:center;
+    display: flex;
 
-    justify-content:space-between;
+    align-items: center;
 
-    gap:25px;
+    justify-content: space-between;
 
-    margin-top:30px;
+    gap: 20px;
 
-    padding:20px;
+    padding: 20px;
 
-    border-radius:20px;
+    border-radius: 20px;
 
-    background:rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 
-    animation:slideUp 0.8s ease;
+    animation: slideUp 0.8s ease;
 }
 
-.weather-left img{
+.weather-left {
 
-    width:130px;
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
-.weather-right{
+.weather-left img {
 
-    text-align:left;
-
-    flex:1;
+    width: 140px;
 }
 
-.weather-right h2{
+.weather-right {
 
-    font-size:32px;
-
-    margin-bottom:10px;
+    flex: 1;
 }
 
-.weather-right h1{
-
-    font-size:52px;
-
-    margin:10px 0;
-}
-
-.weather-right p{
-
-    margin:8px 0;
-
-    font-size:18px;
-
-    color:#f1f1f1;
-}
-}
-
-.weather-box img {
-
-    width: 120px;
-
-    margin: 10px 0;
-}
-
-.weather-box h2 {
+.weather-right h2 {
 
     font-size: 32px;
 
     margin-bottom: 10px;
 }
 
-.weather-box h1 {
+.weather-right h1 {
 
-    font-size: 55px;
+    font-size: 52px;
 
     margin: 10px 0;
 }
 
-.weather-box p {
+.weather-right p {
 
-    margin: 8px 0;
+    font-size: 16px;
 
-    font-size: 18px;
+    margin: 12px 0;
 
     color: #f1f1f1;
 }
@@ -209,7 +189,11 @@ button:hover {
 
     color: #ffb3b3;
 
+    text-align: center;
+
     margin-top: 15px;
+
+    font-size: 18px;
 }
 
 @keyframes fadeIn {
@@ -235,5 +219,42 @@ button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:700px) {
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .weather-box {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .weather-right h1 {
+        font-size: 50px;
+    }
+
+    .weather-right h2 {
+        font-size: 30px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
     }
 }
